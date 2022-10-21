@@ -13,7 +13,7 @@ const UserList: React.FC<UserListProps> = ({ users, setUserDetail }) => {
 
   return (
     <div className="listContainer">
-      {users.slice(0, viewAll ? -1 : 3).map((user) => (
+      {users.slice(0, viewAll ? users.length : 3).map((user) => (
         <div className="container" key={user.phone}>
           <img
             src={`./images/${user.photo}`}
