@@ -25,6 +25,7 @@ const UserList: React.FC<UserListProps> = ({ users, setUserDetail }) => {
             <p className="nickname">{user.nickname}</p>
           </div>
           <button
+            data-testid="viewButton"
             className="viewButton"
             onClick={(): void => setUserDetail(user)}
           >
@@ -35,6 +36,7 @@ const UserList: React.FC<UserListProps> = ({ users, setUserDetail }) => {
       <div className="container">
         <button
           className="viewAllButton"
+          data-testid="viewAllButton"
           onClick={(): void => setViewAll(!viewAll)}
         >
           {viewAll ? 'Hide' : 'View All'}

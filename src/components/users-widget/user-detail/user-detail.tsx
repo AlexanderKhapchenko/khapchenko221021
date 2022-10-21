@@ -12,7 +12,7 @@ interface UserDetailProps {
 
 const UserDetail: React.FC<UserDetailProps> = ({ user, setUserDetail }) => {
   return (
-    <div className="userDetails">
+    <div className="userDetails" data-testid="userDetails">
       <section>
         <img
           className="avatar"

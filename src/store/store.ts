@@ -1,11 +1,21 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
 
+import { UserType } from '../common/types';
 import { reducer as users } from './users/users';
 
-const store = configureStore({
-  reducer: {
-    users,
-  },
-});
+export const createReduxStore = (
+  initialState: Array<UserType> | [],
+): EnhancedStore => {
+  return configureStore({
+    reducer: {
+      users,
+    },
+    preloadedState: {
+      users: {
+        list: initialState,
+      },
+    },
+  });
+};
 
-export { store };
+export const store = createReduxStore([]);
