@@ -1,0 +1,20 @@
+.box {
+    display: grid;
+    grid-template-columns: 100px 200px;
+    align-items: center;
+    justify-items: start;
+}
+
+.box .title {
+    font-weight: bold;
+}
+
+.box .link {
+
+}
+
+.box .phone {
+    color: #3b3b3b;
+    text-decoration: none;
+    font-weight: 500;
+}

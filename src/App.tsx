@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+
+import data from './assets/data/initData.json';
+import { UsersWidget } from './components/users-widget/users-widget';
+import { useAppDispatch, useAppSelector } from './hooks/store/store.hooks';
+import { setUsers } from './store/users/users';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const users = useAppSelector((state) => state.users.list);
+
+  useEffect(() => {
+    dispatch(setUsers(data));
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {users.length ? <UsersWidget users={users} /> : <h3>Loading...</h3>}
     </div>
   );
-}
+};
 
-export default App;
+export { App };

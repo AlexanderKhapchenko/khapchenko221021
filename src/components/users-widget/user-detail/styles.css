@@ -1,0 +1,61 @@
+.userDetails {
+    position: relative;
+    padding: 20px 20px 10px 20px;
+    border: 1px #e7e7e7 solid;
+    width: 400px;
+    margin: 50px;
+}
+
+.userDetails .avatar {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.userDetails .name {
+    font-weight: bold;
+}
+
+.userDetails .position {
+    color: #3b3b3b;
+}
+.userDetails .userInformation {
+    display: flex;
+    flex-direction: column;
+}
+
+.userDetails .userInformation:before {
+    content: '';
+    position: absolute;
+    border-top: 1px #e7e7e7 solid;
+    width: 100%;
+    left: 0;
+}
+
+.userDetails .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+}
+
+.userDetails .sendButton {
+    background: #3c039f;
+    padding: 10px;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.userDetails .sendButton:hover {
+    background: #2c0075;
+}
+
